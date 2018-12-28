@@ -57,11 +57,3 @@ public class LambdaStatementTest {
         assertThat(X.counter, is(2));
     }
 }
-
-class X {
-    static int counter;
-
-    X(int i) {
-        counter++;
-    }
-}
