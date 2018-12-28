@@ -23,3 +23,35 @@ An expression statement is executed by evaluating the expression;
 if the expression has a value, the value is discarded.
 
 # project description
+* assigning a function (`boolean add(E e)`) to `Consumer`
+    ```
+    var list = new LinkedList<String>();
+    Consumer<String> add = list::add;
+    
+    add.accept("a");
+    
+    assertThat(list, hasSize(1));
+    ```
+* function passed as a `Consumer`
+    ```
+    var source = List.of(1, 2, 3);
+    var target = new LinkedList<Integer>();
+    
+    source.forEach(target::add);
+    
+    assertThat(target, is(source));
+    ```
+* `Consumer` that increment the field
+    ```
+    private int x = 5; // field
+    
+    // then in code
+    Consumer<String> increment = s -> x++;
+    
+    increment.accept("a");
+    increment.accept("a");
+    increment.accept("a");
+    increment.accept("a");
+    
+    assertThat(x, is(9));
+    ```
