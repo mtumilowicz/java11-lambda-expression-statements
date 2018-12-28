@@ -19,6 +19,7 @@ statements by following them with semicolons.
     * PostDecrementExpression 
     * MethodInvocation 
     * ClassInstanceCreationExpression
+    
 An expression statement is executed by evaluating the expression; 
 if the expression has a value, the value is discarded.
 
@@ -54,4 +55,23 @@ if the expression has a value, the value is discarded.
     increment.accept("a");
     
     assertThat(x, is(9));
+    ```
+* class creation
+    ```
+    Consumer<Integer> create = X::new;
+    
+    create.accept(1);
+    create.accept(1);
+    
+    assertThat(X.counter, is(2));
+    ```
+    where
+    ```
+    class X {
+        static int counter;
+    
+        X(int i) {
+            counter++;
+        }
+    }
     ```
