@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-lambda-expression-statements.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-lambda-expression-statements)
+
 # java11-lambda-expression-statements
 https://docs.oracle.com/javase/specs/jls/se11/html/jls-14.html#jls-14.8
 
