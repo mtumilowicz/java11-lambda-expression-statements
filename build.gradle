@@ -5,12 +5,13 @@ plugins {
 group 'java11-lambda-expression-statements'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
